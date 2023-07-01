@@ -10,12 +10,19 @@
 import random
 n= int(input('Введите натуральное число:'))
 arr = [None] * n
-count = 0
+close_num = 0
 for i in range(n):
-    arr[i] = random.randint(1, 10)
+    arr[i] = random.randint(1, 50)
 print(arr)
 x = int(input('Введите натуральное число:'))
+diff_num = arr[0]
 for i in range(n):
-    if (arr[i] == x):
-        count += 1
-print (count)
+    if (arr[i] > diff_num):
+        diff_num = arr[i]  #Нахожу наибольший элемент в массиве
+
+for i in range(n):
+    a = arr[i] - x     #Ищу разницу между каждым элементом и х
+    if -1 < a < diff_num:    #Сравниваю разницу
+       diff_num = a
+       close_num =  arr[i]    
+print (close_num)
