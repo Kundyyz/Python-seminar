@@ -29,5 +29,3 @@ if rhythm(glasnye_bukvy, stikh):
     print('Парам пам-пам')
 else:
     print('Пам парам')
-
-
