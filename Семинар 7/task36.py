@@ -13,17 +13,25 @@
 #  5 10  15  20   25   30
 #  6 12  18  24   30   36
 
-number_rows = int(input('Vvedite chislo strok: '))
-number_columns = int(input('Vvedite chislo stolbcov: '))
+# number_rows = int(input('Vvedite chislo strok: '))
+# number_columns = int(input('Vvedite chislo stolbcov: '))
 
-def input_matrix(m, n):
-    for i in range(1, m+1):
-        mat = []
-        row = []
-        for j in range(1, n+1):
-            row.append('{:>3d}'.format(i*j))
-        print(*row)
-matrix = input_matrix(number_rows, number_columns)             
+# def input_matrix(m, n):
+#     for i in range(1, m+1):
+#         row = []
+#         for j in range(1, n+1):
+#             row.append('{:>3d}'.format(i*j))
+#         print(*row)
+# matrix = input_matrix(number_rows, number_columns)  
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    for i in range(1, num_rows + 1):
+        answer = []
+        for j in range(1, num_columns + 1):
+            answer.append(operation(i, j))
+        print(''.join(f'{e:<5}' for e in answer))
+
+print_operation_table(lambda x, y: x * y)          
        
             
 
